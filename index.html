@@ -1,12 +1,4 @@
-# HTML Compatível com WhatsApp — Análise de A Baleia
 
-O problema ocorre porque o visualizador interno do WhatsApp frequentemente bloqueia JavaScript e alguns recursos interativos mais complexos.
-
-A solução mais compatível é utilizar elementos HTML nativos como `<details>` e `<summary>`, que funcionam sem JavaScript e geralmente continuam interativos dentro do preview do WhatsApp.
-
-Substitua o arquivo anterior por este HTML:
-
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -14,54 +6,77 @@ Substitua o arquivo anterior por este HTML:
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A Baleia — Análise Psicopatológica</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 
-body{
+*{
     margin:0;
     padding:0;
-    font-family:Arial, sans-serif;
-    background:#111827;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background:#0b1220;
     color:#f3f4f6;
-    line-height:1.7;
+    line-height:1.8;
+    overflow-x:hidden;
 }
 
-header{
-    padding:40px 20px;
+.hero{
+    min-height:65vh;
+    background:
+    linear-gradient(rgba(6,12,24,.85), rgba(8,15,28,.92)),
+    url('https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    background:#1f2937;
+    padding:40px 20px;
 }
 
-header h1{
-    margin:0;
-    font-size:2.2rem;
+.hero-content{
+    max-width:850px;
 }
 
-header p{
-    margin-top:15px;
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.hero p{
+    font-size:1.2rem;
     color:#d1d5db;
 }
 
 .container{
     width:92%;
-    max-width:900px;
+    max-width:1050px;
     margin:auto;
-    padding:25px 0 60px;
+    padding:50px 0 80px;
 }
 
 .card{
-    background:#1f2937;
-    border-radius:14px;
-    margin-bottom:18px;
+    background:rgba(17,24,39,.9);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:24px;
+    margin-bottom:26px;
     overflow:hidden;
-    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 8px 30px rgba(0,0,0,.25);
+    backdrop-filter:blur(10px);
 }
 
 summary{
     list-style:none;
     cursor:pointer;
-    padding:22px;
-    font-size:1.1rem;
-    font-weight:bold;
+    padding:28px;
+    font-size:1.2rem;
+    font-weight:600;
+    position:relative;
 }
 
 summary::-webkit-details-marker{
@@ -70,8 +85,11 @@ summary::-webkit-details-marker{
 
 summary::after{
     content:'+';
-    float:right;
-    font-size:1.3rem;
+    position:absolute;
+    right:30px;
+    top:26px;
+    font-size:1.6rem;
+    color:#93c5fd;
 }
 
 details[open] summary::after{
@@ -79,42 +97,83 @@ details[open] summary::after{
 }
 
 .content{
-    padding:0 22px 25px;
+    padding:0 28px 35px;
     color:#e5e7eb;
 }
 
+.scene-img{
+    width:100%;
+    border-radius:18px;
+    margin:20px 0 28px;
+    display:block;
+    object-fit:cover;
+    max-height:420px;
+}
+
 .quote{
+    margin:28px 0;
+    padding:22px;
     border-left:4px solid #60a5fa;
-    padding-left:15px;
-    margin:22px 0;
+    background:rgba(96,165,250,.08);
+    border-radius:14px;
+    color:#dbeafe;
     font-style:italic;
-    color:#bfdbfe;
 }
 
 .box{
     background:#111827;
-    padding:18px;
-    border-radius:12px;
-    margin-top:18px;
-}
-
-ul{
-    padding-left:20px;
-}
-
-li{
-    margin-bottom:10px;
+    padding:22px;
+    border-radius:18px;
+    margin-top:24px;
+    border:1px solid rgba(255,255,255,.05);
 }
 
 .highlight{
     color:#93c5fd;
-    font-weight:bold;
+    font-weight:600;
+}
+
+ul{
+    padding-left:22px;
+    margin-top:14px;
+}
+
+li{
+    margin-bottom:12px;
+}
+
+.tag{
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:999px;
+    background:#1e3a5f;
+    margin:6px 6px 0 0;
+    font-size:.9rem;
+    color:#dbeafe;
 }
 
 footer{
     text-align:center;
-    padding:30px;
-    color:#9ca3af;
+    padding:40px;
+    color:#94a3b8;
+    background:#0f172a;
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    summary{
+        font-size:1rem;
+        padding:22px;
+    }
+
+    .content{
+        padding:0 22px 30px;
+    }
+
 }
 
 </style>
@@ -122,12 +181,16 @@ footer{
 
 <body>
 
-<header>
-    <h1>A Baleia</h1>
-    <p>
-        Análise Psicopatológica Comportamental do filme.
-    </p>
-</header>
+<section class="hero">
+    <div class="hero-content">
+        <h1>A Baleia</h1>
+        <p>
+            Uma análise psicopatológica comportamental detalhada do filme,
+            articulando compulsão alimentar, esquiva experiencial,
+            luto, culpa, depressão e análise funcional.
+        </p>
+    </div>
+</section>
 
 <div class="container">
 
@@ -137,20 +200,26 @@ footer{
 
             <div class="content">
 
+                <img class="scene-img" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1400&auto=format&fit=crop" alt="Cena melancólica">
+
                 <p>
                     O modelo comportamental compreende o sofrimento psicológico
-                    como resultado da relação entre ambiente, história de vida
-                    e padrões de aprendizagem.
+                    como resultado da relação entre ambiente, aprendizagem,
+                    reforçamento e história de vida.
                 </p>
 
                 <div class="box">
-                    <p><span class="highlight">Foco clínico:</span></p>
+                    <span class="tag">Análise Funcional</span>
+                    <span class="tag">Reforçamento</span>
+                    <span class="tag">Esquiva</span>
+                    <span class="tag">Psicopatologia</span>
+
                     <ul>
                         <li>Função do comportamento;</li>
-                        <li>Contingências ambientais;</li>
-                        <li>Padrões de esquiva;</li>
-                        <li>Reforçamento;</li>
-                        <li>Rigidez comportamental.</li>
+                        <li>História de aprendizagem;</li>
+                        <li>Consequências ambientais;</li>
+                        <li>Rigidez comportamental;</li>
+                        <li>Padrões emocionais.</li>
                     </ul>
                 </div>
 
@@ -168,28 +237,28 @@ footer{
 
             <div class="content">
 
+                <img class="scene-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1400&auto=format&fit=crop" alt="Comida e compulsão">
+
                 <p>
-                    Charlie utiliza a comida como mecanismo de anestesia emocional.
-                    A compulsão alimentar possui função de aliviar temporariamente
-                    culpa, vazio, vergonha e sofrimento.
+                    Charlie utiliza a comida como anestesia emocional.
+                    O comportamento alimentar possui função de reduzir
+                    temporariamente sofrimento psíquico.
                 </p>
 
                 <div class="box">
-                    <p><strong>Ciclo funcional:</strong></p>
+                    <p><strong>Ciclo comportamental:</strong></p>
 
                     <ul>
                         <li>Dor emocional;</li>
                         <li>Compulsão alimentar;</li>
                         <li>Alívio imediato;</li>
-                        <li>Mais sofrimento posterior.</li>
+                        <li>Mais sofrimento futuro.</li>
                     </ul>
                 </div>
 
-                <p>
-                    O comportamento é mantido por
-                    <span class="highlight">reforçamento negativo</span>,
-                    pois reduz temporariamente emoções aversivas.
-                </p>
+                <div class="quote">
+                    O comportamento é mantido por reforçamento negativo.
+                </div>
 
             </div>
         </details>
@@ -201,24 +270,27 @@ footer{
 
             <div class="content">
 
-                <p>
-                    Charlie evita contato com:
-                </p>
-
-                <ul>
-                    <li>Vergonha;</li>
-                    <li>Culpa;</li>
-                    <li>Luto;</li>
-                    <li>Fracasso;</li>
-                    <li>Rejeição;</li>
-                    <li>Responsabilidade.</li>
-                </ul>
+                <img class="scene-img" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1400&auto=format&fit=crop" alt="Isolamento e sofrimento">
 
                 <p>
-                    O isolamento funciona como estratégia de esquiva.
-                    Quanto mais evita sofrimento,
-                    mais o sofrimento aumenta.
+                    Charlie evita contato com vergonha, culpa,
+                    fracasso, rejeição e responsabilidade.
                 </p>
+
+                <div class="box">
+                    <ul>
+                        <li>Evitação social;</li>
+                        <li>Reclusão extrema;</li>
+                        <li>Desconexão emocional;</li>
+                        <li>Autoabandono;</li>
+                        <li>Fuga experiencial.</li>
+                    </ul>
+                </div>
+
+                <div class="quote">
+                    Quanto mais Charlie evita sofrimento,
+                    mais o sofrimento se intensifica.
+                </div>
 
             </div>
         </details>
@@ -230,19 +302,19 @@ footer{
 
             <div class="content">
 
+                <img class="scene-img" src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?q=80&w=1400&auto=format&fit=crop" alt="Luto e melancolia">
+
                 <p>
                     Após a morte de Alan,
                     Charlie entra em colapso existencial.
                 </p>
 
                 <div class="box">
-                    <p><strong>Principais manifestações:</strong></p>
-
                     <ul>
                         <li>Desesperança;</li>
-                        <li>Negligência com a saúde;</li>
+                        <li>Negligência corporal;</li>
                         <li>Passividade;</li>
-                        <li>Autoabandono;</li>
+                        <li>Culpa persistente;</li>
                         <li>Autodestruição indireta.</li>
                     </ul>
                 </div>
@@ -250,10 +322,6 @@ footer{
                 <div class="quote">
                     “Eu mereço sofrer.”
                 </div>
-
-                <p>
-                    O sofrimento corporal também adquire função moral.
-                </p>
 
             </div>
         </details>
@@ -265,23 +333,26 @@ footer{
 
             <div class="content">
 
+                <img class="scene-img" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1400&auto=format&fit=crop" alt="Conflito familiar">
+
                 <p>
-                    Ellie demonstra repertórios hostis moldados por abandono afetivo.
+                    Ellie apresenta repertórios hostis moldados
+                    por abandono afetivo e privação emocional.
                 </p>
 
                 <div class="box">
                     <ul>
-                        <li>Agressividade verbal;</li>
-                        <li>Manipulação;</li>
+                        <li>Hostilidade verbal;</li>
                         <li>Busca ambivalente por afeto;</li>
+                        <li>Manipulação emocional;</li>
                         <li>Comportamentos opositores.</li>
                     </ul>
                 </div>
 
-                <p>
+                <div class="quote">
                     Charlie reforça parcialmente esses padrões
                     através de permissividade extrema.
-                </p>
+                </div>
 
             </div>
         </details>
@@ -293,51 +364,27 @@ footer{
 
             <div class="content">
 
+                <img class="scene-img" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop" alt="Depressão e isolamento">
+
                 <p>
-                    O ambiente de Charlie é extremamente pobre em reforçadores positivos.
+                    O ambiente de Charlie é extremamente pobre
+                    em reforçadores positivos.
                 </p>
 
                 <div class="box">
                     <ul>
                         <li>Perda de vínculos;</li>
                         <li>Redução de prazer;</li>
-                        <li>Passividade;</li>
                         <li>Isolamento crescente;</li>
+                        <li>Passividade;</li>
                         <li>Desesperança.</li>
                     </ul>
                 </div>
 
-                <p>
-                    O apartamento funciona como metáfora de confinamento psicológico.
-                </p>
-
-            </div>
-        </details>
-    </div>
-
-    <div class="card">
-        <details>
-            <summary>7. Intervenções Terapêuticas</summary>
-
-            <div class="content">
-
-                <div class="box">
-                    <p><strong>Possíveis objetivos clínicos:</strong></p>
-
-                    <ul>
-                        <li>Redução de esquiva experiencial;</li>
-                        <li>Ampliação de repertório comportamental;</li>
-                        <li>Reconstrução de vínculos;</li>
-                        <li>Maior tolerância emocional;</li>
-                        <li>Contato com valores pessoais;</li>
-                        <li>Reintrodução de reforçadores positivos.</li>
-                    </ul>
+                <div class="quote">
+                    O apartamento funciona como metáfora
+                    de confinamento psicológico.
                 </div>
-
-                <p>
-                    A terapia buscaria compreender quais contingências
-                    mantêm o sofrimento e quais repertórios precisam ser desenvolvidos.
-                </p>
 
             </div>
         </details>
@@ -353,22 +400,71 @@ footer{
 </html>
 ```
 
-## Como fazer funcionar no WhatsApp
+# Como reconfigurar corretamente
 
-1. Abra o Bloco de Notas.
-2. Cole o HTML completo.
-3. Salve como:
+## 1. Abra o VSCode ou Bloco de Notas
+
+Cole SOMENTE o código HTML.
+
+Não copie os textos explicativos acima do código.
+
+---
+
+## 2. Salve exatamente assim
 
 ```txt
-abaleia.html
+index.html
 ```
 
-4. Em “Tipo”, escolha:
+Em “Tipo” escolha:
 
 ```txt
 Todos os Arquivos
 ```
 
-5. Envie o arquivo `.html` no WhatsApp.
+---
 
-Esse modelo usa apenas HTML e CSS nativos, sem JavaScript, então os menus devem abrir normalmente dentro do preview do WhatsApp.
+## 3. Para abrir corretamente
+
+No celular:
+
+* toque nos três pontos;
+* escolha “Abrir com navegador”;
+* use Chrome ou Safari.
+
+---
+
+## 4. Para publicar permanentemente
+
+Use:
+
+* GitHub Pages;
+* Netlify conectado ao GitHub;
+* ou Notion.
+
+Assim o arquivo vira um mini-site profissional e abre perfeitamente pelo WhatsApp.
+
+---
+
+## 5. Como trocar imagens
+
+Troque qualquer link dentro de:
+
+```html
+src="LINK"
+```
+
+Por:
+
+* imagens do filme;
+* GIFs;
+* screenshots;
+* imagens clínicas;
+* artes cinematográficas.
+
+Você pode usar:
+
+* Unsplash;
+* Imgur;
+* Postimages;
+* imagens próprias hospedadas online.
