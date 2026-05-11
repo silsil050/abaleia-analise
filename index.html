@@ -1,0 +1,374 @@
+# HTML Compatível com WhatsApp — Análise de A Baleia
+
+O problema ocorre porque o visualizador interno do WhatsApp frequentemente bloqueia JavaScript e alguns recursos interativos mais complexos.
+
+A solução mais compatível é utilizar elementos HTML nativos como `<details>` e `<summary>`, que funcionam sem JavaScript e geralmente continuam interativos dentro do preview do WhatsApp.
+
+Substitua o arquivo anterior por este HTML:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Baleia — Análise Psicopatológica</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+    background:#111827;
+    color:#f3f4f6;
+    line-height:1.7;
+}
+
+header{
+    padding:40px 20px;
+    text-align:center;
+    background:#1f2937;
+}
+
+header h1{
+    margin:0;
+    font-size:2.2rem;
+}
+
+header p{
+    margin-top:15px;
+    color:#d1d5db;
+}
+
+.container{
+    width:92%;
+    max-width:900px;
+    margin:auto;
+    padding:25px 0 60px;
+}
+
+.card{
+    background:#1f2937;
+    border-radius:14px;
+    margin-bottom:18px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+summary{
+    list-style:none;
+    cursor:pointer;
+    padding:22px;
+    font-size:1.1rem;
+    font-weight:bold;
+}
+
+summary::-webkit-details-marker{
+    display:none;
+}
+
+summary::after{
+    content:'+';
+    float:right;
+    font-size:1.3rem;
+}
+
+details[open] summary::after{
+    content:'−';
+}
+
+.content{
+    padding:0 22px 25px;
+    color:#e5e7eb;
+}
+
+.quote{
+    border-left:4px solid #60a5fa;
+    padding-left:15px;
+    margin:22px 0;
+    font-style:italic;
+    color:#bfdbfe;
+}
+
+.box{
+    background:#111827;
+    padding:18px;
+    border-radius:12px;
+    margin-top:18px;
+}
+
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:10px;
+}
+
+.highlight{
+    color:#93c5fd;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#9ca3af;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>A Baleia</h1>
+    <p>
+        Análise Psicopatológica Comportamental do filme.
+    </p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <details open>
+            <summary>1. Modelo Psicopatológico Comportamental</summary>
+
+            <div class="content">
+
+                <p>
+                    O modelo comportamental compreende o sofrimento psicológico
+                    como resultado da relação entre ambiente, história de vida
+                    e padrões de aprendizagem.
+                </p>
+
+                <div class="box">
+                    <p><span class="highlight">Foco clínico:</span></p>
+                    <ul>
+                        <li>Função do comportamento;</li>
+                        <li>Contingências ambientais;</li>
+                        <li>Padrões de esquiva;</li>
+                        <li>Reforçamento;</li>
+                        <li>Rigidez comportamental.</li>
+                    </ul>
+                </div>
+
+                <div class="quote">
+                    “O comportamento problema frequentemente é uma tentativa de solução.”
+                </div>
+
+            </div>
+        </details>
+    </div>
+
+    <div class="card">
+        <details>
+            <summary>2. Compulsão Alimentar</summary>
+
+            <div class="content">
+
+                <p>
+                    Charlie utiliza a comida como mecanismo de anestesia emocional.
+                    A compulsão alimentar possui função de aliviar temporariamente
+                    culpa, vazio, vergonha e sofrimento.
+                </p>
+
+                <div class="box">
+                    <p><strong>Ciclo funcional:</strong></p>
+
+                    <ul>
+                        <li>Dor emocional;</li>
+                        <li>Compulsão alimentar;</li>
+                        <li>Alívio imediato;</li>
+                        <li>Mais sofrimento posterior.</li>
+                    </ul>
+                </div>
+
+                <p>
+                    O comportamento é mantido por
+                    <span class="highlight">reforçamento negativo</span>,
+                    pois reduz temporariamente emoções aversivas.
+                </p>
+
+            </div>
+        </details>
+    </div>
+
+    <div class="card">
+        <details>
+            <summary>3. Esquiva Experiencial</summary>
+
+            <div class="content">
+
+                <p>
+                    Charlie evita contato com:
+                </p>
+
+                <ul>
+                    <li>Vergonha;</li>
+                    <li>Culpa;</li>
+                    <li>Luto;</li>
+                    <li>Fracasso;</li>
+                    <li>Rejeição;</li>
+                    <li>Responsabilidade.</li>
+                </ul>
+
+                <p>
+                    O isolamento funciona como estratégia de esquiva.
+                    Quanto mais evita sofrimento,
+                    mais o sofrimento aumenta.
+                </p>
+
+            </div>
+        </details>
+    </div>
+
+    <div class="card">
+        <details>
+            <summary>4. Luto e Autopunição</summary>
+
+            <div class="content">
+
+                <p>
+                    Após a morte de Alan,
+                    Charlie entra em colapso existencial.
+                </p>
+
+                <div class="box">
+                    <p><strong>Principais manifestações:</strong></p>
+
+                    <ul>
+                        <li>Desesperança;</li>
+                        <li>Negligência com a saúde;</li>
+                        <li>Passividade;</li>
+                        <li>Autoabandono;</li>
+                        <li>Autodestruição indireta.</li>
+                    </ul>
+                </div>
+
+                <div class="quote">
+                    “Eu mereço sofrer.”
+                </div>
+
+                <p>
+                    O sofrimento corporal também adquire função moral.
+                </p>
+
+            </div>
+        </details>
+    </div>
+
+    <div class="card">
+        <details>
+            <summary>5. Relação com Ellie</summary>
+
+            <div class="content">
+
+                <p>
+                    Ellie demonstra repertórios hostis moldados por abandono afetivo.
+                </p>
+
+                <div class="box">
+                    <ul>
+                        <li>Agressividade verbal;</li>
+                        <li>Manipulação;</li>
+                        <li>Busca ambivalente por afeto;</li>
+                        <li>Comportamentos opositores.</li>
+                    </ul>
+                </div>
+
+                <p>
+                    Charlie reforça parcialmente esses padrões
+                    através de permissividade extrema.
+                </p>
+
+            </div>
+        </details>
+    </div>
+
+    <div class="card">
+        <details>
+            <summary>6. Depressão e Isolamento</summary>
+
+            <div class="content">
+
+                <p>
+                    O ambiente de Charlie é extremamente pobre em reforçadores positivos.
+                </p>
+
+                <div class="box">
+                    <ul>
+                        <li>Perda de vínculos;</li>
+                        <li>Redução de prazer;</li>
+                        <li>Passividade;</li>
+                        <li>Isolamento crescente;</li>
+                        <li>Desesperança.</li>
+                    </ul>
+                </div>
+
+                <p>
+                    O apartamento funciona como metáfora de confinamento psicológico.
+                </p>
+
+            </div>
+        </details>
+    </div>
+
+    <div class="card">
+        <details>
+            <summary>7. Intervenções Terapêuticas</summary>
+
+            <div class="content">
+
+                <div class="box">
+                    <p><strong>Possíveis objetivos clínicos:</strong></p>
+
+                    <ul>
+                        <li>Redução de esquiva experiencial;</li>
+                        <li>Ampliação de repertório comportamental;</li>
+                        <li>Reconstrução de vínculos;</li>
+                        <li>Maior tolerância emocional;</li>
+                        <li>Contato com valores pessoais;</li>
+                        <li>Reintrodução de reforçadores positivos.</li>
+                    </ul>
+                </div>
+
+                <p>
+                    A terapia buscaria compreender quais contingências
+                    mantêm o sofrimento e quais repertórios precisam ser desenvolvidos.
+                </p>
+
+            </div>
+        </details>
+    </div>
+
+</div>
+
+<footer>
+    Análise Psicopatológica Comportamental — A Baleia
+</footer>
+
+</body>
+</html>
+```
+
+## Como fazer funcionar no WhatsApp
+
+1. Abra o Bloco de Notas.
+2. Cole o HTML completo.
+3. Salve como:
+
+```txt
+abaleia.html
+```
+
+4. Em “Tipo”, escolha:
+
+```txt
+Todos os Arquivos
+```
+
+5. Envie o arquivo `.html` no WhatsApp.
+
+Esse modelo usa apenas HTML e CSS nativos, sem JavaScript, então os menus devem abrir normalmente dentro do preview do WhatsApp.
